@@ -1,24 +1,13 @@
-import { Container,Row, Col } from "react-bootstrap";
 import "./App.css";
-import FormPage from "./form";
+import Routs from "./routs";
+
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <div>
-        <h1>Authentication Portal</h1>
+        <Routs />
       </div>
-      <br/>
-      <br/>
-      <Container>
-        <Row>
-          <Col></Col>
-          <Col xs={6}>
-            <FormPage />
-          </Col>
-          <Col></Col>
-        </Row>
-      </Container>
     </div>
   );
 }

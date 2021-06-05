@@ -1,12 +1,17 @@
 import { Form, Button, Container } from "react-bootstrap";
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 
 export default function FormPage() {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
-  const handleSubmit = () => {
-    if (user === "saroop" && pass === "jack") 
-    alert("successfull login");     // inclure history.push for page navigation
+  const history = useHistory();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (user === "saroop" && pass === "jack") {
+      history.push("/NavigationsBar");
+      return;
+    } // inclure history.push for page navigation
     else alert("wrong credentials");
   };
 
