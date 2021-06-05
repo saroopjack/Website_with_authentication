@@ -1,6 +1,6 @@
 import { Form, Button, Container } from "react-bootstrap";
 import React, { useState } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 export default function FormPage() {
   const [user, setUser] = useState("");
@@ -9,10 +9,8 @@ export default function FormPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (user === "saroop" && pass === "jack") {
-      history.push("/NavigationsBar");
-      return;
-    } // inclure history.push for page navigation
-    else alert("wrong credentials");
+      history.push("/nav");
+    } else alert("wrong credentials");
   };
 
   return (
@@ -50,7 +48,7 @@ export default function FormPage() {
             controlId="formBasicCheckbox"
           ></Form.Group>
           <Button variant="primary" type="submit">
-            Submit
+            Log in
           </Button>
         </Form>
       </Container>
