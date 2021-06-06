@@ -5,12 +5,27 @@ import { useHistory } from "react-router-dom";
 export default function FormPage() {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
+  const [userCheck, setuUerCheck] = useState("");
+  const [passCheck, setPassCheck] = useState("");
   const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!user) {
+      setuUerCheck("Please enter the username");
+      // return;
+    }
+    if (!pass) {
+      setPassCheck("Please enter the password");
+    }
+    if (user && user !== "saroop") {
+      setuUerCheck("Enter the right usename");
+    }
+    if (pass && pass !== "jack") {
+      setPassCheck("Enter the right password");
+    }
     if (user === "saroop" && pass === "jack") {
       history.push("/nav");
-    } else alert("wrong credentials");
+    }
   };
 
   return (
@@ -25,11 +40,10 @@ export default function FormPage() {
               placeholder="Enter username"
               onChange={(e) => {
                 setUser(e.target.value);
+                setuUerCheck("");
               }}
             />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
+            <span className="spanerror">{userCheck}</span>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -40,8 +54,10 @@ export default function FormPage() {
               placeholder="Enter password"
               onChange={(e) => {
                 setPass(e.target.value);
+                setPassCheck("");
               }}
             />
+            <span className="spanerror">{passCheck}</span>
           </Form.Group>
           <Form.Group
             className="mb-3"

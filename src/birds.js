@@ -1,5 +1,10 @@
 import React from "react";
+import Navbars from "./navbars";
 
 export default function Birds() {
-  return <div>birds</div>;
+  return (
+    <div>
+      <Navbars />
+    </div>
+  );
 }

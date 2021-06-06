@@ -1,13 +1,10 @@
 import "./App.css";
 import Routs from "./routs";
 
-
 function App() {
   return (
     <div>
-      <div>
-        <Routs />
-      </div>
+      <Routs />
     </div>
   );
 }

@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: center;
 }
-.navBarLink {
-  margin: 5px;
+.spanerror {
+  color: red;
+  font-size: 11px;
+  float: right;
 }
